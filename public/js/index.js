@@ -7,10 +7,10 @@ socket.on('connect', function(){
         text: 'Hi hello'
     });*/
 
-    socket.emit('createMessage',{
+   /* socket.emit('createMessage',{
         from:'Andrew',
         text: 'Yup, that works'
-    });
+    });*/
 });
 
 socket.on('disconnect',function(){
@@ -22,5 +22,5 @@ console.log('New email',email);
 });*/
 
 socket.on('newMessage',function (message) {
-    console.log('New email',message);
+    console.log('New message',message);
 });

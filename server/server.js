@@ -27,8 +27,15 @@ io.on('connection', (socket)=>{
         console.log('createEmail', newEmail);
     });*/
 
+        //Listener
     socket.on('createMessage', (message)=>{
         console.log('createMessage', message);
+        //io.emit a event to every single connection
+        io.emit('newMessage',{
+            from: message.from,
+            text:message.text,
+            createdAt: new Date().getTime()
+        });
     });
 
     /*socket.emit('newEmail',{
@@ -37,11 +44,12 @@ io.on('connection', (socket)=>{
         createdat:123
     });*/
 
-    socket.emit('newMessage',{
+    //socket.emit a event to a single connection
+    /*socket.emit('newMessage',{
         from: 'Elias',
         text:'Hello everyone',
         createdAt:12332
-    });
+    });*/
 
 
 });
