@@ -13,7 +13,9 @@
 
         <div class="chat__main">
             
-            <ol id="messages" class="chat__messages"></ol>
+            <ol id="messages" class="chat__messages">
+                
+            </ol>
 
              <div class="chat__footer">
                     <form id="message-form">
@@ -27,20 +29,21 @@
 
         <script id="message-template" type="text/template">
         
-            <li class="message"></li>
-            <div class="message__title">
-                <h4>{{from}}</h4>
-                <span>{{createdAt}}</span>
-            </div>
-            <div class="message__body">
-                <p>{{text}}</p>
-            </div>
-            
+            <li class="message">
+                <div class="message__title">
+                    <h4>{{from}}</h4>
+                    <span>{{createdAt}}</span>
+                </div>
+                    <div class="message__body">
+                    <p>{{text}}</p>
+                </div>
+            </li>
+
         </script>
 
         <script id="locationmessage-template" type="text/template">
         
-            <li class="message"></li>
+            <li class="message">
             <div class="message__title">
                 <h4>{{from}}</h4>
                 <span>{{createdAt}}</span>
@@ -48,7 +51,7 @@
             <div class="message__body">
                 <a href="{{url}}" target="_blank" >My current location</a>
             </div>
-            
+        </li>
         </script>
 
 
